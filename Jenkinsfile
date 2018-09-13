@@ -1,12 +1,15 @@
 pipeline {
-    agent { dockerfile true 
-            label 'docker'
-          }
+	agent {
+		dockerfile {
+        filename 'Dockerfile'
+		label 'docker'
+        
+		}	
+	}
     stages {
         stage('Test') {
             steps {
                 sh 'httpd --version'
-               
             }
         }
     }
